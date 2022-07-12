@@ -56,11 +56,10 @@ while True:
             waiting = (convert*60+10)
             sent = time.strftime("%d/%m/%Y %H:%M:%S", time.localtime(int(time.time())))
             url = 'https://bloxflip.com'
-            chrome_path = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
-            webbrowser.get(chrome_path).open(url, new=0, autoraise=True)
+            webbrowser.get().open(url, new=0, autoraise=True)
             time.sleep(1)
             while True:
-              join = pyautogui.locateOnScreen('assets/pro.png', confidence = 0.7)
+              join = pyautogui.locateCenterOnScreen('assets/pro.png', confidence = 0.7)
               if join:
                 time.sleep(1)
                 pyautogui.moveTo(join)
