@@ -1,0 +1,4 @@
+pyautogui
+discord_webhook
+cloudscraper
+win10toast
