@@ -61,7 +61,7 @@ while True:
             while True:
               join = pyautogui.locateCenterOnScreen('assets/pro.png', confidence = 0.7)
               if join:
-                time.sleep(1)
+                time.sleep(3)
                 pyautogui.moveTo(join)
                 time.sleep(0.5)
                 pyautogui.click()
