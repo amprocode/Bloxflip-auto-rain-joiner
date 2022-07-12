@@ -2,3 +2,5 @@ pyautogui
 discord_webhook
 cloudscraper
 win10toast
+pillow
+opencv-python
