@@ -1,4 +1,4 @@
-import json, os, time, cloudscraper, webbrowser, pyautogui, random
+import json, os, time, cloudscraper, webbrowser, pyautogui
 from win10toast import ToastNotifier
 from discord_webhook import DiscordWebhook, DiscordEmbed
 
@@ -61,16 +61,12 @@ while True:
             while True:
               join = pyautogui.locateCenterOnScreen('assets/pro.png', confidence = 0.7)
               if join:
-                time.sleep(3)
+                time.sleep(1)
                 pyautogui.moveTo(join)
                 time.sleep(0.5)
                 pyautogui.click()
-                time.sleep(0.3)
-                for i in range(4):
-                  number1 = random.randint(0, 1000)
-                  number2 = random.randint(0, 1000)
-                  pyautogui.moveTo(number1, number2, 2)
-                  time.sleep(0.5)
+                joined = pyautogui.locateCenterOnScreen('assets/joined.png', confidence = 0.7)
+                time.sleep(waiting/2)
                 pyautogui.hotkey('ctrl', 'w')
                 break
             info = scraper.get("https://rest-bf.blox.land/user", headers = {"x-auth-token": f"{auth}"}).json()['user']
