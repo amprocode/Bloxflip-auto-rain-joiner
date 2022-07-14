@@ -65,7 +65,6 @@ while True:
                 pyautogui.moveTo(join)
                 time.sleep(0.5)
                 pyautogui.click()
-                joined = pyautogui.locateCenterOnScreen('assets/joined.png', confidence = 0.7)
                 time.sleep(waiting/2)
                 pyautogui.hotkey('ctrl', 'w')
                 break
