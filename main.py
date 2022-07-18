@@ -1,4 +1,4 @@
-import json, os, time, cloudscraper, webbrowser, pyautogui
+import json, os, time, cloudscraper, webbrowser, pyautogui, random
 from win10toast import ToastNotifier
 from discord_webhook import DiscordWebhook, DiscordEmbed
 
@@ -16,6 +16,7 @@ ping = config['webhook_ping']
 refresh = config['refresh_rate']
 auth = config['authorization']
 winnotif = config['windows_notification']
+mouse_move = config['mouse_movement']
 
 if webhook_enable == "True":
   webhook = DiscordWebhook(url=webhookurl, content=f"{ping}")
@@ -65,13 +66,18 @@ while True:
                 pyautogui.moveTo(join)
                 time.sleep(0.5)
                 pyautogui.click()
-                time.sleep(waiting/2)
+                if mouse_move == "True":
+                  for i in range(3):
+                    number1 = random.randint(0, 1000)
+                    number2 = random.randint(0, 1000)
+                    pyautogui.moveTo(number1, number2, 2)
+                time.sleep(waiting/3)
                 pyautogui.hotkey('ctrl', 'w')
                 break
             info = scraper.get("https://rest-bf.blox.land/user", headers = {"x-auth-token": f"{auth}"}).json()['user']
             checker = scraper.get("https://rest-bf.blox.land/chat/history").json()['rain']['players']
             if info['robloxId'] in checker:
-              print(f"Bloxflip Rain!\nRain amount: {prize} R$\nExpiration: {duration} minutes\nHost: {host}\nTimestamp: {sent}\n\n")
+              print(f"Successfully joined rain!\nRain amount: {prize} R$\nExpiration: {duration} minutes\nHost: {host}\nTimestamp: {sent}\n\n")
               if webhook_enable == "True":
                 thumburl = (f"https://i.giphy.com/media/l41YevbrMDaHgismI/200.gif")
                 embed = DiscordEmbed(title=f"Successfully joined a rain!", url="https://bloxflip.com", color=0xFFC800)

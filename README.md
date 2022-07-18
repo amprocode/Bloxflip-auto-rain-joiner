@@ -1,7 +1,8 @@
 # Bloxflip-auto-rain-joiner
 
-## Update v1.0:
-- Initial release
+## Update v1.1:
+- Bug fixes
+- Mouse move
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -35,6 +36,7 @@ Default config.json file:
 {
   "minimum_amount": 500,
   "refresh_rate": 30,
+  "mouse_movement": "True",
   "windows_notification": "True",
   "webhook_enabled": "False",
   "webhook_ping": "<@1234567890987654>",
@@ -53,6 +55,9 @@ How often you want it to check if there is a rain currently happening (in second
 ⚠️ WARNING ⚠️
 - Recommended to not go below 15 seconds because you dont want your potato PC to crash
 - Experiment with this feature, see what works for you
+
+### mouse_movement:
+If set to "True" it will move your mouse around whilst joining rain, whilst doing tests i found that this makes it more likely to join it and complete the botfail captcha
 
 ### windows_notification:
 If set to "True" then a popup on the bottom right on your screen will display showing you information about the current rain

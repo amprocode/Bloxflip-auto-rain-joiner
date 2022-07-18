@@ -1,6 +1,7 @@
 {
   "minimum_amount": 500,
   "refresh_rate": 30,
+  "mouse_movement": "True",
   "windows_notification": "True",
   "webhook_enabled": "False",
   "webhook_ping": "<@1234567890987654>",
