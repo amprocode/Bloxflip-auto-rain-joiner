@@ -1,5 +1,6 @@
 import json, os, time, cloudscraper, webbrowser, pyautogui, random
 from win10toast import ToastNotifier
+from bs4 import BeautifulSoup as beauty
 from discord_webhook import DiscordWebhook, DiscordEmbed
 
 os.system(f'title Bloxflip Auto Rain Joiner ^')
@@ -24,7 +25,8 @@ if webhook_enable == "True":
 toast = ToastNotifier()
 
 try:
-  info = scraper.get("https://rest-bf.blox.land/user", headers = {"x-auth-token": f"{auth}"}).json()['user']
+  get = scraper.get("https://rest-bf.blox.land/user", headers = {"origin": "https://bloxflip.com", "x-auth-token": auth})
+  info = get.json()['user']
   print(f"Logged in as {info['robloxUsername']}\nCurrent balance: {info['wallet']}\n\n")
 except:
   input("Invalid Auth Token\nPress enter to exit.")
