@@ -1,6 +1,5 @@
 import json, os, time, cloudscraper, webbrowser, pyautogui, random
 from win10toast import ToastNotifier
-from bs4 import BeautifulSoup as beauty
 from discord_webhook import DiscordWebhook, DiscordEmbed
 
 os.system(f'title Bloxflip Auto Rain Joiner ^')
